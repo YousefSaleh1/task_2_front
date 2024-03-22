@@ -1,9 +1,10 @@
 "use strict";
 class Contact {
-    constructor(name, email, phone) {
+    constructor(name, email, phone, group) {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.group = group;
     }
 }
 class AddressBook {
@@ -43,14 +44,14 @@ class AddressBook {
             console.log(`Name: ${contact.name}`);
             console.log(`Email: ${contact.email}`);
             console.log(`Phone: ${contact.phone}`);
-            console.log("-----");
+            console.log("-------");
         }
     }
 }
 const addressBook = new AddressBook();
-const contact1 = new Contact("John Doe", "johndoe@example.com", "123-456-7890");
-const contact2 = new Contact("Alice Smith", "alice.smith@invalid", "456-789-0123"); // Invalid email
-const contact3 = new Contact("", "valid@email.com", "789-012-3456"); // Empty name
+const contact1 = new Contact("John Doe", "johndoe@example.com", "123-456-7890", "City Group");
+const contact2 = new Contact("Alice Smith", "alice.smith@invalid", "456-789-0123", "Miga Group"); // Invalid email
+const contact3 = new Contact("", "valid@email.com", "789-012-3456", "Pexcel Group"); // Empty name
 addressBook.addContact(contact1);
 try {
     addressBook.addContact(contact2); // This will throw an error (invalid email)
